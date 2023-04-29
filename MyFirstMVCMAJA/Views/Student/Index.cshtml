@@ -1,0 +1,146 @@
+﻿@model MyFirstMVCMAJA.User
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    var a = 10;
+
+
+}
+
+
+@*@Html.TextBoxFor(x => x.UserName, new { @class = "myClass", @id = "idUsername" })
+
+    <br />
+    @Html.TextBox("UserName");*@
+
+<br />
+@*@Html.TextBox("UserName");*@
+
+
+@Html.ActionLink("Go to Home Page", "Index", "Home")
+
+@*<button onc> Save</button>*@
+
+<a href="@Html.Action("Index","Home")">d</a>
+
+
+
+
+<input type="file" />
+
+
+@Html.CheckBoxFor(x => x.isActive)
+
+@Html.HiddenFor(x => x.UserId);
+
+@Html.PasswordFor(x => x.Password);
+
+
+
+@Html.DropDownListFor(x => x.UserId, new SelectList(ViewBag.User, "UserId", "UserName"), new { @class = "form-control" })
+
+
+@Html.RadioButtonFor(m => m.Gender, "Male") MALE
+<br />
+
+@Html.RadioButtonFor(m => m.Gender1, "Female") FEMALE
+@Html.RadioButtonFor(m => m.Gender1, "MALE") FEMALE
+
+<input id="UserName" name="UserName" type="text">
+
+<h1>@Session["EmailId"]</h1>
+
+
+
+@Html.Partial("_MyPartialView", Model)
+@Html.Partial("_MyPartialView")
+@Html.Partial("_MyPartialView")
+@Html.Partial("_MyPartialView")
+@Html.Partial("_MyPartialView")
+
+@Html.Partial("_MyPartialView")
+@Html.Partial("_MyPartialView")
+
+@{
+    Html.RenderPartial("_MyPartialView");
+}
+
+<h1>@ViewBag.StudentId</h1>
+
+<h1>@ViewData["StudentId"]</h1>
+
+<button id="btnSave" class="clsSave">
+    Save
+</button>
+
+<h1>Student  / Index Page</h1>
+
+<a href="/Home/Index">Go to Home Controller</a>
+
+@*@foreach (var item in ViewBag.StudentId)
+    {
+
+    }*@
+
+
+@*<h2>@Model.StudentName</h2>*@
+
+@*<form method="post" action="~/Controllers/home/index">
+
+    </form>*@
+
+
+
+@*@using(Html.BeginForm(,))*@
+
+
+@*@using (Html.BeginForm("Index", "Student", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+
+
+
+        @Html.TextBoxFor(m => m.StudentId, new { @class = "form-control" })
+        <br />
+
+
+        @Html.TextBoxFor(m => m.StudentName, new { @class = "form-control" })
+
+        <br />
+        <input type="submit" value="Save" />
+    }*@
+
+
+
+@Scripts.Render("~/bundles/jquery")
+
+@*@Styles.Render("~/Content/css")*@
+
+<script>
+    $(document).ready(function () { // Page load
+
+        debugger
+        // # >> ID
+        // . >> Class
+        // HTML Tag >> $("button")
+
+        $("#btnSave").click(function () {
+            if (confirm('are you sure ?!')) {
+
+
+            }
+            else {
+
+            }
+            /*$.getScript("/Student/javascriptResult");*/
+        });
+
+        //$(".clsSave").click(function () {
+        //    $.getScript("/Student/javascriptResult/12");
+        //});
+    });
+</script>
